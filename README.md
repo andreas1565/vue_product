@@ -40,13 +40,14 @@ adgangskoder er 1234
 
 * sequelize er en orm(Object-relational mapping) det er at man ikke Behøver at skrive Sin egen sql Sætninger men man kan vis man vil [officielle hjemmeside Dokumentation](https://sequelize.org/)
 
-* Morgan, den logger http request http status code og et timestamp og det inde i '' er hvordan man kan formater hvor det skal se ud i terminalen[npm docs](https://www.npmjs.com/package/morgan)
+* Morgan, den logger http request http status code og et timestamp og det inde i '' er hvordan man kan formater hvor det skal se ud i terminalen [npm docs](https://www.npmjs.com/package/morgan)
 
 ### npm pakker til client
-* vue er en froend framework for at opbygning af brugergrænseflader[officielle hjemmeside Dokumentation](https://vuejs.org/v2/guide/)
-* vue-router er for client side routing som gøre at du kan lave link til ande side i vue js[officielle hjemmeside Dokumentation](https://router.vuejs.org/)
+* vue er en froend framework for at opbygning af brugergrænseflader [officielle hjemmeside Dokumentation](https://vuejs.org/v2/guide/)
+* vue-router er for client side routing som gøre at du kan lave link til ande side i vue js 
+ [officielle hjemmeside Dokumentation](https://router.vuejs.org/)
 * vuex er state manage Bibliotek så kan du brige data over alt i vue [officielle hjemmeside Dokumentation](https://vuex.vuejs.org/)
-* vue-bootstrap som gøre at det er nemmer at bruge bootstrap med vue [officielle hjemmeside Dokumentation](https://bootstrap-vue.js.org/)
+* vue-bootstrap som gøre at det er nemmer at bruge bootstrap med vue  [officielle hjemmeside Dokumentation](https://bootstrap-vue.js.org/)
 
 ## mysql dump
 mysql dump eller mysql backup finder du i mappen sql
