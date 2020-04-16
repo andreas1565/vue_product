@@ -8,6 +8,18 @@ for at køre  server `cd sever` og derefter `npm install` denne pakke/modul for 
 for at køre client `cd client` derefter `npm install` denne pakke/modul start client i development `npm run serve` [http://localhost:3000/products](http://localhost:3000/books) 
 hvis du er klare til din vue app skal du på nette `npm run build`
 
+## Eksempler på .env
+DB_DATABASE=vueproduct
+DB_USER=root
+DB_PASSWORD=root
+DB_PORT=8889
+JTW_SECRET="SECRET"
+PORT=1337
+
+## burger brugernavn og adgangskoder
+email er admin@gmail.com
+adgangskoder er 1234
+
 ## Lise over npm pakker
 ### npm pakker til server 
 * Dotenv er et modul der sørger for at vi kan bruge .env, så alle database informationer ikke står i en fil. Hvis man bliver hacket, kan hackeren ikke se database informationerne mere.[npm docs](https://www.npmjs.com/package/dotenv)
@@ -35,3 +47,6 @@ hvis du er klare til din vue app skal du på nette `npm run build`
 * vue-router er for client side routing som gøre at du kan lave link til ande side i vue js[officielle hjemmeside Dokumentation](https://router.vuejs.org/)
 * vuex er state manage Bibliotek så kan du brige data over alt i vue [officielle hjemmeside Dokumentation](https://vuex.vuejs.org/)
 * vue-bootstrap som gøre at det er nemmer at bruge bootstrap med vue [officielle hjemmeside Dokumentation](https://bootstrap-vue.js.org/)
+
+## mysql dump
+mysql dump eller mysql backup finder du i mappen sql

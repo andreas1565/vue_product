@@ -1,8 +1,8 @@
 const Sequelize = require('sequelize');
 
-db = new Sequelize('vueproduct', 'root', 'root', {
+db = new Sequelize(process.env.DB_DATABASE, process.env.DB_USER, process.env.DB_PASSWORD, {
   dialect: 'mysql',
-  port: 8889
+  port: process.env.DB_PORT
 });
 
 function dbCheck() {
