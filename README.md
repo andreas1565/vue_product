@@ -4,7 +4,7 @@
 dette Projekt er et Eksempel på login og crud på Produkter Kategorier Og så kan man se kontakter på Administration Panelet og fra froend kan man send en sin Kontakt informationer og Administrator kan slette contact man kan se firma info på Kontakt side og som Administrator kan se og opdater firma info Produktet er lave med vue for froend og backend api express database er mysql
 
 ## kommandor 
-for at køre  server `cd sever` og derefter `npm install` denne pakke/modul for at køre server `npm run dev`
+for at køre  server `cd server` og derefter `npm install` denne pakke/modul for at køre server `npm run dev`
 for at køre client `cd client` derefter `npm install` denne pakke/modul start client i development `npm run serve` [http://localhost:3000/products](http://localhost:3000/books) 
 hvis du er klare til din vue app skal du på nette `npm run build`
 
