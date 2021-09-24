@@ -1,11 +1,12 @@
 <template>
   <main role="main" class="col-md-8 ml-sm-auto col-lg-8 px-4 container">
+    <Modal v-if="showModal" :show="showModal" @deleteMethood="DashboardCategories(currentid)" @closeModal="showModal = false;" />
     <div
-      class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+      class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom remove-border"
     >
       <h1 class="h2">Kategorier</h1>
-      <div class="btn-toolbar">
-        <router-link :to="{name: 'DashboardCreateCategories' }" class="btn">Create a New Categories</router-link>
+      <div class="btn-toolbar ">
+        <router-link :to="{name: 'DashboardCreateCategories' }" class="btn btn-primary">Create a New Categories</router-link>
       </div>
     </div>
 
@@ -34,12 +35,24 @@
 </template>
 
 <script>
+import Modal from '@/components/Modal.vue';
 export default {
+  data() {
+    return {
+      showModal: false,
+      currentid: 0,
+    }
+  },
+  components:{
+    Modal
+  },
   props: ["allCategories", "DashboardCategories"],
   name: "DashboardCategories",
   methods: {
     deleteCategorie(id) {
-      this.DashboardCategories(id);
+      this.showModal = !this.showModal;
+      this.currentid = id;
+     // this.DashboardCategories(id);
     }
   }
 };

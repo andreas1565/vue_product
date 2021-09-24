@@ -30,8 +30,8 @@ export default {
 };
 </script>
 <style>
-img {
-  width: 70%;
-  height: auto;
+.card-img-top{
+  width:100%;
+  height:auto;
 }
 </style>

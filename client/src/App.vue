@@ -37,4 +37,7 @@ export default {
     }
   }
 }
+.remove-border{
+  border-bottom: none !important;
+}
 </style>

@@ -23,7 +23,7 @@
       <input
         type="password"
         id="inputPassword"
-        class="form-control"
+        class="form-control mt-2"
         name="password"
         placeholder="Password"
         v-model="password"

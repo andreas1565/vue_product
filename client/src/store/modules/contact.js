@@ -1,10 +1,10 @@
 const APIURL = 'http://localhost:1337/api/v1/contact/';
 const state = {
-  contact: []
+  contact: [],
 };
 
 const getters = {
-  allContact: state => state.contact
+  allContact: (state) => state.contact,
 };
 
 const actions = {
@@ -22,15 +22,15 @@ const actions = {
       const response = await fetch(APIURL, {
         method: 'POST',
         headers: {
-          'Content-Type': 'application/json'
+          'Content-Type': 'application/json',
         },
         body: JSON.stringify({
           name: Formdata.name,
           address: Formdata.address,
           phone: Formdata.phone,
           email: Formdata.email,
-          messages: Formdata.messages
-        })
+          messages: Formdata.messages,
+        }),
       });
       let result = await response.json();
       commit('newContact', result);
@@ -40,29 +40,29 @@ const actions = {
   },
   async DeleteContact({ commit }, id) {
     try {
-      await fetch(`${APIURL}/${id}`, {
+      await fetch(`${APIURL}${id}`, {
         method: 'DELETE',
         headers: {
-          'Authorization': `Bearer ${localStorage.token}`
-        }
+          Authorization: `Bearer ${localStorage.token}`,
+        },
       });
       commit('removeContact', id);
     } catch (error) {
       console.log(error);
     }
-  }
+  },
 };
 
 const mutations = {
   setContact: (state, contact) => (state.contact = contact),
   newContact: (state, contact) => state.contact.unshift(contact),
   removeContact: (state, id) =>
-    (state.contact = state.contact.filter(contact => contact.id !== id))
+    (state.contact = state.contact.filter((contact) => contact.id !== id)),
 };
 
 export default {
   state,
   getters,
   actions,
-  mutations
+  mutations,
 };

@@ -1,7 +1,8 @@
 <template>
   <main role="main" class="col-md-8 ml-sm-auto col-lg-8 px-4 container">
+    <Modal v-if="showModal"   :show="showModal" @deleteMethood="DashboardContact(currentid)" @closeModal="showModal = false;" />
     <div
-      class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+      class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom remove-border"
     >
       <h1 class="h2">Kontakt</h1>
     </div>
@@ -19,7 +20,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr v-for="contact in allContact" :key="`${contact}-${Math.random()}`">
+        <tr v-for="contact  in allContact" :key="contact.id">
           <td>
             <b-button class="text-danger fas fa-trash-alt" @click="deleteContact(contact.id)"></b-button>
           </td>
@@ -35,13 +36,30 @@
 </template>
 
 <script>
+import Modal from '@/components/Modal.vue';
 export default {
   props: ["allContact", "DashboardContact"],
   name: "DashboardContact",
+  data() {
+    return {
+      showModal: false,
+      currentid: 0,
+    }
+  },
+  components:{
+    Modal
+  },
   methods: {
     deleteContact(id) {
-      this.DashboardContact(id);
+      this.showModal = !this.showModal;
+      this.currentid = id;
     }
   }
 };
 </script>
+
+<style>
+  .close:hover{
+    cursor: pointer;
+  }
+</style>

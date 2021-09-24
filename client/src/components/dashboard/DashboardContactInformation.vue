@@ -1,7 +1,7 @@
 <template>
   <main role="main" class="col-md-8 ml-sm-auto col-lg-8 px-4 container">
     <div
-      class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom"
+      class="d-flex justify-content-between flex-wrap flex-md-nowrap align-items-center pt-3 pb-2 mb-3 border-bottom remove-border"
     >
       <h1 class="h2">kontakt information</h1>
     </div>
@@ -21,7 +21,7 @@
       <tbody>
         <tr
           v-for="contactinformation in allContactinformations"
-          :key="`${contactinformation}-${Math.random()}`"
+          :key="contactinformation.id"
         >
           <td>
             <router-link
@@ -42,6 +42,7 @@
 
 <script>
 export default {
+
   props: ["allContactinformations"],
   name: "DashboardContactInformation"
 };
