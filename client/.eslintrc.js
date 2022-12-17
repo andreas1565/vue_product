@@ -5,7 +5,11 @@ module.exports = {
   },
   extends: ['plugin:vue/essential', 'eslint:recommended', '@vue/prettier'],
   parserOptions: {
-    parser: 'babel-eslint'
+    "ecmaVersion": 6,
+    "ecmaFeatures": {
+      "experimentalObjectRestSpread": true
+    },
+    parser: '@babel/eslint-parser',
   },
   rules: {
     'no-console': process.env.NODE_ENV === 'production' ? 'error' : 'off',
@@ -16,6 +20,10 @@ module.exports = {
     'func-names': 0,
     'no-process-exit': 0,
     'object-shorthand': 0,
-    'class-methods-use-this': 0
+    'class-methods-use-this': 0,
+    'vue/multi-word-component-names': 'off',
+    "vue/no-mutating-props":'off',
+    "vue/no-reserved-component-name":'off',
+    "no-dupe-else-if":'off'
   }
 };

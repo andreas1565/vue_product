@@ -120,6 +120,7 @@ const actions = {
     }
   },
   async updatepagination({ commit }, currentPage) {
+    console.log(currentPage);
     try {
       let response = await fetch(`${APIURLPagination}?page=${currentPage}`);
       let data = await response.json();

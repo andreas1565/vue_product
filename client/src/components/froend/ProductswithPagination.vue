@@ -6,13 +6,13 @@
       :per-page="getPagination.perPage"
       aria-controls="my-table"
       align="center"
-      @input="paginate(getPagination.currentPage)"
+      @change="updatepagination($event)"
     ></b-pagination>
     <div class="row">
       <div
         class="col-lg-4 col-md-6 mb-4 ml-3"
         v-for="product in getPagination.products"
-        :key="`${product.id}-${Math.random()}`"
+        :key="`${product.id}`"
       >
         <div class="card h-100">
           <router-link :to="{ name: 'EditProductPage', params: { id: product.id } }">
@@ -39,15 +39,17 @@ export default {
   name: "ProductswithPagination",
   methods: {
     ...mapActions(["getproducts", "updatepagination"]),
-    async paginate(currentPage) {
-      this.updatepagination(currentPage);
+    async paginate(val) {
+       /* 
+       this.getproducts() */
+       this.updatepagination(val);
     }
   },
-  computed: mapGetters(["getPagination"]),
+  computed: mapGetters(["getPagination"]), 
   created() {
     // this.getproducts();
     this.getproducts();
-  }
+  },
 };
 </script>
 

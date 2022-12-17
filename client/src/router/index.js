@@ -1,8 +1,12 @@
-import Vue from 'vue';
-import VueRouter from 'vue-router';
-import isLogin from '../middleware/isLogin';
-Vue.use(VueRouter);
+//vue 2
+/* import Vue from 'vue'; */
+//import VueRouter from 'vue-router';
 
+// vue 3
+import {createRouter, createWebHashHistory} from 'vue-router';
+
+import isLogin from '../middleware/isLogin';
+/* Vue.use(VueRouter); */
 const routes = [
   {
     path: '/products',
@@ -126,10 +130,15 @@ const routes = [
   }
 ];
 
-const router = new VueRouter({
+/* const router = new VueRouter({
   mode: 'history',
   base: process.env.BASE_URL,
   routes
-});
+}); */
+
+const router = createRouter({
+  history: createWebHashHistory(),
+  routes,
+})
 
 export default router;
