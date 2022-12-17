@@ -14,7 +14,7 @@
         type="email"
         id="inputEmail"
         name="email"
-        class="form-control"
+        class="form-control mb-3"
         placeholder="Email address"
         autofocus
         v-model="email"
@@ -23,12 +23,12 @@
       <input
         type="password"
         id="inputPassword"
-        class="form-control"
+        class="form-control mb-3"
         name="password"
         placeholder="Password"
         v-model="password"
       />
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      <button class="btn btn-lg mb-3 btn-primary btn-block" type="submit">Sign in</button>
       <span
         v-for="error in errors"
         :key="`${error}-${Math.random()}`"

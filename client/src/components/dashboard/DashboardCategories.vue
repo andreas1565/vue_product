@@ -23,7 +23,7 @@
             <router-link
               :to="{ name:  'DashboardEditCategoriesPage', params: { id: categorie.id, } }"
               class="update updatebtn fas fa-edit"
-            ></router-link>
+            ></router-link>&nbsp;
             <b-button class="text-danger fas fa-trash-alt" @click="deleteCategorie(categorie.id)"></b-button>
           </td>
           <td>{{ categorie.name }}</td>

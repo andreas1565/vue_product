@@ -25,7 +25,7 @@
             <router-link
               :to="{ name:  'DashboardEditProductPage', params: { id: product.id, } }"
               class="update updatebtn fas fa-edit"
-            ></router-link>
+            ></router-link>&nbsp;
             <b-button class="text-danger fas fa-trash-alt" @click="deleteProduct(product.id)"></b-button>
           </td>
           <td>{{ product.name }}</td>
