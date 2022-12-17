@@ -3,12 +3,12 @@ const APIURL = 'http://localhost:1337/api/v1/categories';
 // state is where all of the data in your app Lives it link the data Property
 const state = {
   categories: [],
-  categorie: []
+  categorie: [],
 };
 // Does A Can get data Between store and compontents/views and Updates when changes made to the state
 const getters = {
-  allCategories: state => state.categories,
-  OneCategorie: state => state.categorie
+  allCategories: (state) => state.categories,
+  OneCategorie: (state) => state.categorie,
 };
 
 const actions = {
@@ -27,11 +27,11 @@ const actions = {
         method: 'POST',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${localStorage.token}`
+          Authorization: `Bearer ${localStorage.token}`,
         },
         body: JSON.stringify({
-          name: Formdata.name
-        })
+          name: Formdata.name,
+        }),
       });
       let result = await response.json();
       commit('newCategorie', result);
@@ -57,11 +57,11 @@ const actions = {
         method: 'PATCH',
         headers: {
           'Content-Type': 'application/json',
-          'Authorization': `Bearer ${localStorage.token}`
+          Authorization: `Bearer ${localStorage.token}`,
         },
         body: JSON.stringify({
-          name: Formdata.name
-        })
+          name: Formdata.name,
+        }),
       });
       let result = await response.json();
       commit('updateCategorie', result);
@@ -73,13 +73,15 @@ const actions = {
     try {
       await fetch(`${APIURL}/${id}`, {
         method: 'DELETE',
-        'Authorization': `Bearer ${localStorage.token}`
+        headers: {
+          Authorization: `Bearer ${localStorage.token}`,
+        },
       });
       commit('removeCategorie', id);
     } catch (error) {
       console.error(error);
     }
-  }
+  },
 };
 
 const mutations = {
@@ -88,7 +90,7 @@ const mutations = {
   setCategorie: (state, categorie) => (state.categorie = categorie),
   updateCategorie: (state, formData) => {
     const index = state.categories.findIndex(
-      categories => categories.id === formData.id
+      (categories) => categories.id === formData.id
     );
     if (index !== -1) {
       state.categories.splice(index, 1, formData);
@@ -96,13 +98,13 @@ const mutations = {
   },
   removeCategorie: (state, id) =>
     (state.categories = state.categories.filter(
-      categories => categories.id !== id
-    ))
+      (categories) => categories.id !== id
+    )),
 };
 
 export default {
   state,
   getters,
   actions,
-  mutations
+  mutations,
 };

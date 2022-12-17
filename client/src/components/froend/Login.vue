@@ -23,12 +23,12 @@
       <input
         type="password"
         id="inputPassword"
-        class="form-control"
+        class="form-control mt-2"
         name="password"
         placeholder="Password"
         v-model="password"
       />
-      <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+      <button class="btn btn-lg mt-4 btn-primary btn-block" type="submit">Sign in</button>
       <span
         v-for="error in errors"
         :key="`${error}-${Math.random()}`"
